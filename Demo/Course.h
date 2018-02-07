@@ -1,8 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-using namespace std;
-//1¡¢	ÖÁÉÙ¶¨Òå¿Î³ÌÀàºÍÑ§ÉúÀà¡£¿Î³ÌÀàÖÁÉÙĞèÒª¶¨Òå¿Î³Ì±àºÅ¡¢¿Î³ÌÃû³Æ¡¢¿Î³ÌÀàĞÍ£¨Í¨Ê¶¿Î¡¢×¨Òµ»ù´¡¿Î¡¢×¨Òµ¿ÎÈıÖÖ£©¡¢ÊÚ¿Î½ÌÊ¦¡¢Ñ§Ê±¡¢Ñ§·ÖµÈĞÅÏ¢ÒÔ¼°ÏàÓ¦³ÉÔ±º¯Êı¡£
+//1ã€	è‡³å°‘å®šä¹‰è¯¾ç¨‹ç±»å’Œå­¦ç”Ÿç±»ã€‚è¯¾ç¨‹ç±»è‡³å°‘éœ€è¦å®šä¹‰è¯¾ç¨‹ç¼–å·ã€è¯¾ç¨‹åç§°ã€è¯¾ç¨‹ç±»å‹ï¼ˆé€šè¯†è¯¾ã€ä¸“ä¸šåŸºç¡€è¯¾ã€ä¸“ä¸šè¯¾ä¸‰ç§ï¼‰ã€æˆè¯¾æ•™å¸ˆã€å­¦æ—¶ã€å­¦åˆ†ç­‰ä¿¡æ¯ä»¥åŠç›¸åº”æˆå‘˜å‡½æ•°ã€‚
 
 
 class Course
@@ -13,15 +12,15 @@ private:
 public:
 	Course();
 	~Course();
-	void Input();																//ÊäÈë¸÷Ïî
-	void Modify();																//ĞŞ¸Ä¸÷Ïî
-	char *get_Course_Code() { return Course_Code; };							//·µ»Ø¿Î³ÌºÅ£¬Íâ²¿½Ó¿Ú
-	char *get_Course_Name() { return Course_Name; };							//¿ÎÃû
-	char get_Course_type() { return Course_Type; };								//¿Î³ÌÀàĞÍ a.»ù´¡b.×¨Òµ»ù´¡c.×¨Òµ
-	char *get_Course_Teacher() { return Course_Teacher; };						//ÊÚ¿Î½ÌÊ¦
-	int get_Course_Time() { return Course_Time; };								//¿ÎÊ±
-	int get_Course_Unit() { return Course_Unit; };								//Ñ§·Ö
-	void input_Course_Code(char c[10]) { strcpy_s(Course_Code,c); };			//ÒÔÏÂÊÇÊäÈë
+	void Input();																//è¾“å…¥å„é¡¹
+	void Modify();																//ä¿®æ”¹å„é¡¹
+	char *get_Course_Code() { return Course_Code; };							//è¿”å›è¯¾ç¨‹å·ï¼Œå¤–éƒ¨æ¥å£
+	char *get_Course_Name() { return Course_Name; };							//è¯¾å
+	char get_Course_type() { return Course_Type; };								//è¯¾ç¨‹ç±»å‹ a.åŸºç¡€b.ä¸“ä¸šåŸºç¡€c.ä¸“ä¸š
+	char *get_Course_Teacher() { return Course_Teacher; };						//æˆè¯¾æ•™å¸ˆ
+	int get_Course_Time() { return Course_Time; };								//è¯¾æ—¶
+	int get_Course_Unit() { return Course_Unit; };								//å­¦åˆ†
+	void input_Course_Code(char c[10]) { strcpy_s(Course_Code,c); };			//ä»¥ä¸‹æ˜¯è¾“å…¥
 	void input_Course_Name(char c[10]) { strcpy_s(Course_Name,c); };
 	void input_Course_type(char c) { Course_Type = c; };
 	void input_Course_Teacher(char c[10]) { strcpy_s(Course_Teacher,c); };
@@ -30,26 +29,26 @@ public:
 };
 
 
-//¹¹ÔìÁ´±íµÄ½Úµã£¬¿ÉÏÔÊ¾Êä³ö½ÚµãÄÚµÄ³ÉÔ±£¨¹«ÓĞ¼Ì³ĞCourseÀà£©
+//æ„é€ é“¾è¡¨çš„èŠ‚ç‚¹ï¼Œå¯æ˜¾ç¤ºè¾“å‡ºèŠ‚ç‚¹å†…çš„æˆå‘˜ï¼ˆå…¬æœ‰ç»§æ‰¿Courseç±»ï¼‰
 class LNode_Course:public Course
 {
 public:
 	LNode_Course *next = NULL;
-	void Display();																//ÏÔÊ¾½ÚµãĞÅÏ¢
-	bool select();																//ÊÇ·ñÑ¡ÕâÃÅ¿Î
-	void Copy(LNode_Course *&p);												//¸´ÖÆ
+	void Display();																//æ˜¾ç¤ºèŠ‚ç‚¹ä¿¡æ¯
+	bool select();																//æ˜¯å¦é€‰è¿™é—¨è¯¾
+	void Copy(LNode_Course *&p);												//å¤åˆ¶
 };
 
 
-//¹¹ÔìÍê³ÉµÄÁ´±í
+//æ„é€ å®Œæˆçš„é“¾è¡¨
 class Linked_Courses
 {
 public:
 	LNode_Course *head=NULL, *rear=NULL;
-	void Init();																//³õÊ¼»¯
-	void Into_Linked_Courses();													//´´½¨ĞÂ¿Î³Ì¼ÓÈëÁ´±í
-	void Searche_Courses();														//°´¸÷ÖÖ±ê×¼²éÕÒ·ûºÏÌõ¼şµÄ½Úµã
-	void Display();																//ÏÔÊ¾È«²¿±íÄÚĞÅÏ¢
-	void Delete();																//²éÕÒÉ¾³ı£¨ÄÚº¬É¾³ıÈ·ÈÏ£©
-	void Courses_Modify();														//²éÕÒĞŞ¸Ä
+	void Init();																//åˆå§‹åŒ–
+	void Into_Linked_Courses();													//åˆ›å»ºæ–°è¯¾ç¨‹åŠ å…¥é“¾è¡¨
+	void Searche_Courses();														//æŒ‰å„ç§æ ‡å‡†æŸ¥æ‰¾ç¬¦åˆæ¡ä»¶çš„èŠ‚ç‚¹
+	void Display();																//æ˜¾ç¤ºå…¨éƒ¨è¡¨å†…ä¿¡æ¯
+	void Delete();																//æŸ¥æ‰¾åˆ é™¤ï¼ˆå†…å«åˆ é™¤ç¡®è®¤ï¼‰
+	void Courses_Modify();														//æŸ¥æ‰¾ä¿®æ”¹
 };
