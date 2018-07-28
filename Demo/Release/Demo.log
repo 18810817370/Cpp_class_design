@@ -1,6 +1,8 @@
-﻿  Demo.cpp
+﻿  Course.cpp
+  Demo.cpp
+  Student.cpp
   Generating code
-  1 of 90 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+  54 of 90 functions (60.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
